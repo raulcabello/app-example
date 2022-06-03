@@ -25,10 +25,10 @@ jobs:
         with:
           push: true
           build-args: VERSION=${{ env.TAG_NAME }}
-          tags: ghcr.io/viccuad/app-example:${{ env.TAG_NAME }}
+          tags: ghcr.io/raulcabello/app-example:${{ env.TAG_NAME }}
       - uses: sigstore/cosign-installer@main
       - name: Sign + push signature
         run: |
-          cosign sign ghcr.io/viccuad/app-example:${{ env.TAG_NAME }}
+          cosign sign ghcr.io/raulcabello/app-example:${{ env.TAG_NAME }}
         env:
           COSIGN_EXPERIMENTAL: 1
