@@ -31,6 +31,7 @@ jobs:
           cosign-release: 'v1.8.0'
       - name: Sign + push signature
         run: |
+          cosign version
           cosign sign ghcr.io/raulcabello/app-example:${{ env.TAG_NAME }}
         env:
           COSIGN_EXPERIMENTAL: 1
